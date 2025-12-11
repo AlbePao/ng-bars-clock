@@ -1,12 +1,27 @@
 import { ChangeDetectionStrategy, Component, computed, input, numberAttribute } from '@angular/core';
 
+const BLOCK_HEIGHT = 64;
+
 @Component({
   selector: 'app-numbers-bar',
   templateUrl: './numbers-bar.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  styles: `
+    .numbers-bar-shadow {
+      box-shadow:
+        8px 8px 12px #615a56,
+        -8px -8px 12px #dadada;
+    }
+
+    .marker-shadow {
+      box-shadow:
+        10px 10px 18px #6f6f6f,
+        -10px -10px 18px #afafaf;
+    }
+  `,
   host: {
-    class: 'inline-flex flex-col absolute',
-    '[style]': '`top: ${barTop()}`',
+    class: 'absolute transition-all duration-300 ease-out',
+    '[style.top]': 'barTop()',
   },
 })
 export class NumbersBarComponent {
@@ -44,8 +59,8 @@ export class NumbersBarComponent {
 
   barTop = computed(() => {
     const currentValueIndex = this.numbersArray().findIndex((value) => value === this.value());
-    const currentValueHeight = currentValueIndex * 64;
+    const currentValueHeight = currentValueIndex * BLOCK_HEIGHT;
 
-    return `calc(50% - ${currentValueHeight}px)`;
+    return `calc(50% - ${BLOCK_HEIGHT / 2}px - ${currentValueHeight}px)`;
   });
 }
