@@ -5,7 +5,8 @@ import { ChangeDetectionStrategy, Component, computed, input, numberAttribute } 
   templateUrl: './numbers-bar.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    class: 'inline-flex flex-col bg-stone-900 absolute',
+    class: 'inline-flex flex-col absolute',
+    '[style]': '`top: ${barTop()}`',
   },
 })
 export class NumbersBarComponent {
@@ -39,5 +40,12 @@ export class NumbersBarComponent {
     let startingPoint = start;
 
     return Array.from({ length }, () => startingPoint++);
+  });
+
+  barTop = computed(() => {
+    const currentValueIndex = this.numbersArray().findIndex((value) => value === this.value());
+    const currentValueHeight = currentValueIndex * 64;
+
+    return `calc(50% - ${currentValueHeight}px)`;
   });
 }

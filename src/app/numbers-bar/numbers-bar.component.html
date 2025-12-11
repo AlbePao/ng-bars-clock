@@ -1,5 +1,12 @@
 @for (number of numbersArray(); track number) {
-  <span class="block rounded-2xl bg-stone-700 p-4 text-center text-stone-100">{{ number }}</span>
+  <div
+    class="relative flex h-16 w-16 items-center justify-center bg-stone-700 p-4 text-center first:rounded-t-2xl last:rounded-b-2xl"
+  >
+    @if (number === value()) {
+      <div class="absolute z-40 h-20 w-20 rounded-full bg-slate-800/50"></div>
+    }
+    <span class="z-50" [class]="number === value() ? 'text-lg text-white' : 'text-stone-400'">
+      {{ number }}
+    </span>
+  </div>
 }
-
-<div class="bg-stone-900"></div>
