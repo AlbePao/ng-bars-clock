@@ -1,0 +1,43 @@
+import { ChangeDetectionStrategy, Component, computed, input, numberAttribute } from '@angular/core';
+
+@Component({
+  selector: 'app-numbers-bar',
+  templateUrl: './numbers-bar.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  host: {
+    class: 'inline-flex flex-col bg-stone-900 absolute',
+  },
+})
+export class NumbersBarComponent {
+  readonly value = input.required({ transform: numberAttribute });
+  readonly min = input.required({ transform: numberAttribute });
+  readonly max = input.required({ transform: numberAttribute });
+
+  numbersArray = computed(() => {
+    const min = this.min();
+    const max = this.max();
+
+    // Sort min and max
+    const start = Math.min(min, max);
+    const end = Math.max(min, max);
+
+    if (start === end) {
+      return [start];
+    }
+
+    // We have at leat one value, so length starts to 1
+    let length = 1;
+
+    if ((start <= 0 && end > 0) || (start === 0 && end > 0) || (start < 0 && end === 0)) {
+      const minValue = Math.abs(start);
+      const maxValue = Math.abs(end);
+      length += minValue + maxValue;
+    } else if (start > 0 && end > 0) {
+      length += end - start;
+    }
+
+    let startingPoint = start;
+
+    return Array.from({ length }, () => startingPoint++);
+  });
+}
