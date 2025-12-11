@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, computed, OnInit, signal } from '@angular/core';
-import { NumbersBarComponent } from './numbers-bar';
+import { NumbersBarComponent } from './numbers-bar.component';
 
 @Component({
   selector: 'app-root',
