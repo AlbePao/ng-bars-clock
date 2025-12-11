@@ -11,7 +11,37 @@
   "projects": {
     "ng-bars-clock": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "type": "component",
+          "style": "none",
+          "changeDetection": "OnPush"
+        },
+        "@schematics/angular:directive": {
+          "type": "directive"
+        },
+        "@schematics/angular:interceptor": {
+          "functional": true,
+          "typeSeparator": "."
+        },
+        "@schematics/angular:guard": {
+          "functional": true,
+          "typeSeparator": "."
+        },
+        "@schematics/angular:resolver": {
+          "functional": true,
+          "typeSeparator": "."
+        },
+        "@schematics/angular:interface": {
+          "type": "interface"
+        },
+        "@schematics/angular:service": {
+          "type": "service"
+        },
+        "@schematics/angular:pipe": {
+          "typeSeparator": "."
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
