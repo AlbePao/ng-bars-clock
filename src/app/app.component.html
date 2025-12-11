@@ -1,31 +1,29 @@
-<div class="flex h-full flex-row items-center justify-center gap-52">
-  <!-- Hours -->
-  <div class="flex flex-row gap-16">
-    <div class="relative">
-      <app-numbers-bar min="0" max="2" [value]="currentHours()[0]" />
-    </div>
-    <div class="relative">
-      <app-numbers-bar min="0" max="9" [value]="currentHours()[1]" />
-    </div>
+<!-- Hours -->
+<div class="flex flex-row gap-12">
+  <div class="relative w-16">
+    <app-numbers-bar min="0" max="2" [value]="currentHours()[0]" />
   </div>
-
-  <!-- Minutes -->
-  <div class="flex flex-row gap-16">
-    <div class="relative">
-      <app-numbers-bar min="0" max="5" [value]="currentMinutes()[0]" />
-    </div>
-    <div class="relative">
-      <app-numbers-bar min="0" max="9" [value]="currentMinutes()[1]" />
-    </div>
+  <div class="relative w-16">
+    <app-numbers-bar min="0" max="9" [value]="currentHours()[1]" />
   </div>
+</div>
 
-  <!-- Seconds -->
-  <div class="flex flex-row gap-16">
-    <div class="relative">
-      <app-numbers-bar min="0" max="5" [value]="currentSeconds()[0]" />
-    </div>
-    <div class="relative">
-      <app-numbers-bar min="0" max="9" [value]="currentSeconds()[1]" />
-    </div>
+<!-- Minutes -->
+<div class="flex flex-row gap-12">
+  <div class="relative w-16">
+    <app-numbers-bar min="0" max="5" [value]="currentMinutes()[0]" />
+  </div>
+  <div class="relative w-16">
+    <app-numbers-bar min="0" max="9" [value]="currentMinutes()[1]" />
+  </div>
+</div>
+
+<!-- Seconds -->
+<div class="flex flex-row gap-12">
+  <div class="relative w-16">
+    <app-numbers-bar min="0" max="5" [value]="currentSeconds()[0]" />
+  </div>
+  <div class="relative w-16">
+    <app-numbers-bar min="0" max="9" [value]="currentSeconds()[1]" />
   </div>
 </div>

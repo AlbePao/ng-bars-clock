@@ -7,7 +7,8 @@ import { NumbersBarComponent } from './numbers-bar';
   templateUrl: './app.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    class: 'w-full h-full bg-stone-400 block overflow-hidden',
+    class:
+      'flex h-full w-full flex-row items-center justify-center gap-32 overflow-hidden bg-gradient-to-br from-neutral-200 to-neutral-700',
   },
 })
 export class AppComponent implements OnInit {
