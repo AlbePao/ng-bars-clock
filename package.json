@@ -10,6 +10,9 @@
     "lint": "ng lint"
   },
   "private": true,
+  "engines": {
+    "node": "20.x"
+  },
   "dependencies": {
     "@angular/common": "^21.0.5",
     "@angular/compiler": "^21.0.5",
