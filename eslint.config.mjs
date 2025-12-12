@@ -2,7 +2,6 @@ import eslint from '@eslint/js';
 import angular from 'angular-eslint';
 import boundaries from 'eslint-plugin-boundaries';
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
-import rxjsX from 'eslint-plugin-rxjs-x';
 import { defineConfig } from 'eslint/config';
 import tseslint from 'typescript-eslint';
 
@@ -16,7 +15,6 @@ export default defineConfig([
       ...tseslint.configs.recommendedTypeChecked,
       ...tseslint.configs.stylisticTypeChecked,
       ...angular.configs.tsRecommended,
-      rxjsX.configs.strict,
       eslintPluginPrettierRecommended,
       boundaries.configs.recommended, // all files have to belong to a type
     ],
@@ -114,7 +112,6 @@ export default defineConfig([
       eqeqeq: 'error',
       curly: 'error',
       'no-nested-ternary': 'error',
-      'rxjs-x/no-ignored-error': 'off',
       'boundaries/element-types': [
         'error',
         {
