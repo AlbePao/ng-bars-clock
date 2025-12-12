@@ -10,7 +10,6 @@
     "lint": "ng lint"
   },
   "private": true,
-  "packageManager": "npm@10.9.4",
   "dependencies": {
     "@angular/common": "^21.0.5",
     "@angular/compiler": "^21.0.5",
@@ -42,5 +41,8 @@
     "typescript": "~5.9.3",
     "typescript-eslint": "8.49.0",
     "vitest": "^4.0.15"
+  },
+  "optionalDependencies": {
+    "@esbuild/linux-x64": "^0.27.1"
   }
 }
